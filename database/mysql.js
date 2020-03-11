@@ -23,9 +23,9 @@ dbConnection: function () {
     // });
     connection = mysql.createConnection({
         host: '172.30.73.147',
-        user: 'root',
-        password: '1234',
-        database: 'exchange',
+        user: 'nA3VBKunet',
+        password: 'etwcAPRDd0',
+        database: 'nA3VBKunet',
         insecureAuth : true,
         port: 3306,
         dateStrings:true
