@@ -5,31 +5,22 @@ const sequelize= require('./sequelize');
 
       module.exports = ()=> {
  
-        var tasas = sequelize.define('tasas', {
+        var bancos = sequelize.define('bancos', {
  
             id: {
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            pais: {
+            nombre: {
                 type: Sequelize.STRING,
                 notEmpty: true
+              }
             },
-            tasa_actual: {
-                type: Sequelize.FLOAT,
-                notEmpty: true
-            },
-             
-             createdAt: {
-              type: Sequelize.DATE 
-              ,field: 'create_at'
-            } 
-          },
-          {
-            tableName: 'tasas'
+            {
+            tableName: 'bancos'
           });
      
-        return tasas;
+        return bancos;
      
     }

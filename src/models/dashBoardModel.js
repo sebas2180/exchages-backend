@@ -19,6 +19,7 @@ const multer  = require('multer');
                   statusMessage: "",
                   data: rows
                 }
+                conn.release();
                 resolve(resp);
               });
              

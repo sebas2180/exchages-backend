@@ -20,16 +20,23 @@ module.exports = {
             )
     })
 }, getTasa: (pais)=>{
-        const linea = 'SELECT * FROM tasas WHERE pais=\''+pais+'\'';
-        console.log(linea);
+        //const linea = 'SELECT * FROM tasas WHERE pais=\''+pais+'\'';
+        //console.log(linea);
         return new Promise((resolve, reject) => {
-          conn.query(linea, function(err, results) {
-            if (err) {
-              throw err;
-            }
-           
-            resolve((results));
-          });
+          Tasa.findOne({ where:{ pais : pais}})
+          .then(
+              res=>{
+                  resolve(res);
+              }
+          )
+          // conn.query(linea, function(err, results) {
+          //   if (err) {
+          //     conn.release();
+          //     throw err;
+          //   }
+          //   conn.release();
+          //   resolve((results));
+          // });
         })
 }, updateTasa: (req)=>{
   console.log(req.body);
